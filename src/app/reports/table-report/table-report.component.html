@@ -1,0 +1,85 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <div class="shadow p-3">
+        <div class="col-sm-12">
+        <mat-card style="background-color: #3f51b5;">
+          <mat-card-content><span style="float:left;color: white;font: bold;">Number of Schools by School Management and
+              School Category Report Id:1003</span>
+  
+            <span style="float:right;padding-left: 2px;"><button mat-raised-button color="primary"
+                (click)="ExportTOPdf()"><img _ngcontent-gxf-c336="" width="16" src="assets/images/pdf.svg" class="mr-3"
+                  style="cursor: pointer;"></button></span>
+            <span style="float:right; padding-left: 2px;"><button mat-raised-button color="primary"
+                (click)="ExportTOExcel()"><img _ngcontent-gxf-c336="" width="16" src="assets/images/excell.png"
+                  class="mr-3" style="cursor: pointer;"></button></span>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  
+      <div class="col-sm-12">
+        <mat-form-field>
+          <mat-label>Year</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <span class="spacer"></span>
+  
+        <mat-form-field>
+          <mat-label>India/State/UT</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="col-sm-12" style="width:100%; height: 63vh; overflow: auto;" #TABLE>
+        <table mat-table id="table" #table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> No. </th>
+            <td mat-cell class="table-td" *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+  
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> Name </th>
+            <td mat-cell class="table-td" *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+  
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> Weight </th>
+            <td mat-cell class="table-td" *matCellDef="let element"> {{element.weight}} </td>
+          </ng-container>
+  
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef class="table-head"> Symbol </th>
+            <td mat-cell class="table-td" *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns sticky:true"
+            style="background-color: #132554 !important; color: aliceblue;"></tr>
+  
+          <tr mat-row style="height:30px;" (click)="clickedRows.add(row)"
+            [class.demo-row-is-clicked]="clickedRows.has(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+          <!-- <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->
+        </table>
+  
+        <mat-paginator class="mat-paginator-sticky" [pageSizeOptions]="[10, 20]" showFirstLastButtons
+          aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+    </div>
+  
+  </div>

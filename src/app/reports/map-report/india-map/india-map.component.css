@@ -1,0 +1,27 @@
+.esri-map-draw {
+    height: 785px;
+    min-width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: -10px !important;
+}
+
+
+::ng-deep #bmap_gc{
+ margin-top: -30px !important;
+}
+::ng-deep .esriPopup .titleButton {
+    display: none !important;
+}
+
+.loader-center {
+    height: 785px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.p-2 {
+    margin-top: -15px !important;
+}
