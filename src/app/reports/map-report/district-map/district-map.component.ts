@@ -33,7 +33,7 @@ export class DistrictMapComponent implements OnInit {
 
 
   stateArcUrl = "https://mapservice.gov.in/gismapservice/rest/services/BharatMapService/Admin_Boundary_Village/MapServer";
-  stateArcKey = "AYoPi0yUpPCJsWAW5QDg0K1addTUhmtdg9EzfsXjyJDwgWGuUlRb0agTOejvK6RP-7KnKiszVZozignazCey6g..";
+  stateArcKey = "AYoPi0yUpPCJsWAW5QDg0PC4uO_lxb5JGyJajKwyMUBWB-X2MB_XkuK3wFDwHj_xcNuQY5ioZvm51G6MNJiVfg..";
 
   async initializeMap() {
     try {
